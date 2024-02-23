@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -29,3 +30,5 @@ Route::prefix('category')->group(function(){
     Route::get('/home-care', [CategoryController::class, 'homeCare']);
     Route::get('/baby-kid', [CategoryController::class, 'babyKid']);
 });
+
+Route::get('/user/{id}/name/{name}', [UserController::class, 'index']);
